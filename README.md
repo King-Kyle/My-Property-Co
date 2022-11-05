@@ -1,12 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+For quick and easy viewing you can click the link below and see the live project deployed on vercel:
+
+[`my-property-co.vercel.app`](https://my-property-co.vercel.app/)
 
 
 
 ## Getting Started
 
-For quick and easy viewing you can click the link below and see the live project deployed on vercel:
-
-([my-property-co.vercel.app](https://my-property-co.vercel.app/))
 
 First, clone the repo into your development folder:
 
