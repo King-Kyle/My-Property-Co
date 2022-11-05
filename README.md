@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 For quick and easy viewing you can click the link below and see the live project deployed on vercel:
 
-[my-property-co.vercel.app](my-property-co.vercel.app)
+([my-property-co.vercel.app](https://my-property-co.vercel.app/))
 
 First, clone the repo into your development folder:
 
