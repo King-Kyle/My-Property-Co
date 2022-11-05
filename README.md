@@ -29,12 +29,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 
-## Frameworks & Libraries
+## Stack
+
+Libraries:
 
 - React.js - https://reactjs.org/
+
+Frameworks:
 
 - Next.js - https://nextjs.org/
 
 - Tailwind CSS - https://tailwindcss.com/
 
+Deployment:
 
+- Vercel - https://vercel.com/
