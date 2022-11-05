@@ -31,10 +31,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Frameworks & Libraries
 
-### React.js - https://reactjs.org/
+- React.js - https://reactjs.org/
 
-### Next.js - https://nextjs.org/
+- Next.js - https://nextjs.org/
 
-### Tailwind CSS - https://tailwindcss.com/
+- Tailwind CSS - https://tailwindcss.com/
 
 
