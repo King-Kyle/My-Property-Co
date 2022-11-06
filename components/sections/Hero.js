@@ -5,7 +5,7 @@ const images = ["/hero.webp", "/hero2.webp"];
 export default function Hero() {
   return (
     <header>
-      <div className="w-full bg-bottom bg-cover sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
+      <div className="w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
         <Image
           className="z-[-10]"
           src="/hero.webp"
@@ -103,7 +103,9 @@ export default function Hero() {
               </div>
               <div className="hidden md:block md:col-span-2"></div>
               <div className="col-span-8 md:col-span-4 flex flex-wrap items-center justify-end">
-                <p className="font-bold text-white mt-3">124 properties</p>
+                <p className="font-bold text-sm text-white mt-3">
+                  124 properties
+                </p>
                 <div className="relative ml-3 mt-3 ">
                   <div className="ml-2 pointer-events-none absolute inset-y-0 left-0 flex items-center px-2 text-gray-700">
                     <svg
