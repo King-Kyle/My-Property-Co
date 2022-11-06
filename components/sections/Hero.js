@@ -1,21 +1,51 @@
 import Image from "next/image";
 
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+
+// import required modules
+import { Autoplay, EffectFade } from "swiper";
+
 const images = ["/hero.webp", "/hero2.webp"];
 
 export default function Hero() {
   return (
     <header>
-      <div className="w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
-        <Image
-          className="z-[-10]"
-          src="/hero.webp"
-          alt="Hero Background"
-          quality="100"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="bottom"
-        />
-        <div className="flex items-end justify-center w-full h-full">
+      <div className="relative w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          effect={"fade"}
+          autoplay={{
+            delay: 8000,
+            disableOnInteraction: false,
+          }}
+          navigation={false}
+          modules={[EffectFade, Autoplay]}
+          className="mySwiper absolute"
+        >
+          <SwiperSlide
+            style={{
+              backgroundImage: `url('/hero.webp')`,
+              height: "85vh",
+            }}
+            className="w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]"
+          ></SwiperSlide>
+          <SwiperSlide
+            style={{
+              backgroundImage: `url('/hero2.webp')`,
+              height: "85vh",
+            }}
+            className="w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]"
+          ></SwiperSlide>
+        </Swiper>
+
+        <div className="absolute top-0 z-10 flex items-end justify-center w-full h-full">
           <div className="w-full md:w-[70%] mx-6 mb-[5vh] sm:mb-[12vh] shadow p-5 sm:p-8 rounded-lg bg-primary bg-opacity-70">
             <div className="grid lg:grid-cols-8 gap-y-6 gap-x-4">
               <div className="inline-block relative">
