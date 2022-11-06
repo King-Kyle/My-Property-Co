@@ -22,7 +22,7 @@ const incentives = [
 export default function Slider() {
   return (
     <>
-      <div className="max-w-2xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <div className="mb-12 sm:mb-0 max-w-2xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-heading text-primary sm:text-4xl">
           <span className="block">Featured Properties</span>
         </h2>

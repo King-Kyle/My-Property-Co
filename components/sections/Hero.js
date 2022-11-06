@@ -1,18 +1,11 @@
 import Image from "next/image";
-//import HeroSlider from "../sections/HeroSlider";
 
-// const images = [`url('/hero.webp')`, `url('/hero2.webp')`];
 const images = ["/hero.webp", "/hero2.webp"];
 
 export default function Hero() {
   return (
     <header>
-      <div
-        className="w-full bg-bottom bg-cover h-[calc(100vh-112px)]"
-        // style={{
-        //   backgroundImage: `url('/hero.webp')`,
-        // }}
-      >
+      <div className="w-full bg-bottom bg-cover sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
         <Image
           className="z-[-10]"
           src="/hero.webp"
