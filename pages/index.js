@@ -7,14 +7,18 @@ import Cards from "../components/sections/Cards";
 
 export default function Home() {
   return (
-    <Layout>
-      <Head>
-        <title>My Property Co.</title>
-      </Head>
-      <Hero />
-      <CTA />
-      <Slider />
-      <Cards />
-    </Layout>
+    <>
+      <div>
+        <Layout>
+          <Head>
+            <title>My Property Co.</title>
+          </Head>
+          <Hero />
+          <CTA />
+          <Slider />
+          <Cards />
+        </Layout>
+      </div>
+    </>
   );
 }

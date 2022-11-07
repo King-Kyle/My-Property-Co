@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const posts = [
   {
     title: "Mortgage Calculator",
@@ -21,11 +25,29 @@ const posts = [
   },
 ];
 
+const animVariants = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 50 },
+};
+
 export default function Cards() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <div className="relative bg-white pt-16 pb-20 lg:pt-24 lg:pb-28 px-4 sm:px-6 lg:px-8">
       <div className="relative max-w-7xl mx-auto">
-        <div className="mt-12 max-w-lg md:w-[70%] mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <motion.div
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={animVariants}
+          className="mt-12 max-w-lg md:w-[70%] mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+        >
           {posts.map((post) => (
             <div
               key={post.title}
@@ -54,7 +76,7 @@ export default function Cards() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,22 +1,38 @@
-import Image from "next/image";
-
-import React, { useRef, useState } from "react";
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
-
 // import required modules
 import { Autoplay, EffectFade } from "swiper";
 
 const images = ["/hero.webp", "/hero2.webp"];
 
+const animVariants = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 50 },
+};
+
 export default function Hero() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <header>
-      <div className="relative w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]">
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={animVariants}
+        className="relative w-full bg-bottom bg-cover max-h-[60rem] sm:h-[calc(100vh-112px)] h-[calc(125vh)]"
+      >
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -176,7 +192,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }

@@ -1,6 +1,28 @@
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const animVariants = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 50 },
+};
+
 export default function CTA() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
-    <div className="bg-white">
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={animVariants}
+      className="bg-white"
+    >
       <div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-heading text-primary sm:text-4xl">
           <span className="block">Lorem ipsum dolor sit amet</span>
@@ -19,6 +41,6 @@ export default function CTA() {
           Read More
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
